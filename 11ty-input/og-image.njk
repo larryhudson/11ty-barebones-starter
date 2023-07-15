@@ -1,0 +1,21 @@
+-- -js {
+    layout : "layout.njk",
+    pagination : {
+        data: "collections.sections",
+        size: 1,
+        alias: "section",
+        addAllPagesToCollections: true
+    },
+    tags : ["og-image"],
+    permalink : (data) => `/og-images${
+        data.section.url
+    }/`,
+    eleventyComputed : {
+        pageUrl: (data) => data.section.url
+    }
+}
+-- - <h1> {
+    {
+        section.data.title
+    }
+}</h1> < h2 > {{ section.data.subtitle }} < /h2>

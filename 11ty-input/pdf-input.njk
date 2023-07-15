@@ -1,0 +1,7 @@
+---
+layout: layout.njk
+---
+
+{% for post in collections.sections %}
+    {{ post.templateContent|safe }}
+{% endfor %}
